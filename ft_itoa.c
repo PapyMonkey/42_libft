@@ -6,11 +6,11 @@
 /*   By: papy <aguiri@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 01:56:53 by papy              #+#    #+#             */
-/*   Updated: 2021/10/29 11:30:20 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/29 16:13:08 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
 /**
  * @brief : Return the length of a given integer. 
@@ -44,8 +44,8 @@ int	ft_intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*out;
 
 	i = 0;

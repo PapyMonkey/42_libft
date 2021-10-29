@@ -6,15 +6,15 @@
 /*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 06:54:52 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/24 07:22:40 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/29 15:54:09 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-	void	*ft_memset(void *b, int c, size_t len)
-	{
-		size_t	i;
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
 
 	i = 0;
 	while (i < len)

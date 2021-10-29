@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 02:01:54 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/29 16:07:20 by aguiri           ###   ########.fr       */
+/*   Created: 2021/10/29 16:16:31 by aguiri            #+#    #+#             */
+/*   Updated: 2021/10/29 16:37:32 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * \brief	Write a given string on a choosen file descriptor followed 
- * 			by a line break.
+ * \brief	Converts a lower case letter to the corresponding upper-case
+ * 			letter.
  *
- * \param	s	String to write. 
- * \param	fd	File descriptor on which you want your output.
+ * \param	c	Ascii value of the letter to convert.
+ *
+ * \returns		If the argument is a lower-case letter, returns the
+ * 				corresponding upper-case. Otherwise, the argument is returned
+ * 				unchanged.
  */
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_toupper(int c)
 {
-	while (s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
-	write(fd, "\n", 1);
+	if (ft_isalpha(c))
+		return (c - 32);
+	else
+		return (c);
 }

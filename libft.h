@@ -6,12 +6,15 @@
 /*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/24 07:18:55 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/29 16:52:05 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdlib.h>
+# include <unistd.h>
 
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_isalnum.c
@@ -21,7 +24,7 @@ void	ft_bzero(void *s, size_t n);
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_isalnum.c
 
-int 	ft_isalnum(int c);
+int		ft_isalnum(int c);
 
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_isalpha.c
@@ -36,17 +39,22 @@ int		ft_isascii(int c);
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_isdigit.c
 
-int 	ft_isdigit(int c);
+int		ft_isdigit(int c);
 
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_isprint.c
 
-int 	ft_isprint(int c);
+int		ft_isprint(int c);
 
 // -----------------------------------------------------------------------------
-// FUNCTION - ft_memset.c
+// FUNCTION - ft_itoa.c
 
-void	*ft_memcpy(void restricted *dst, const void restricted *src, size_t n);
+int		ft_intlen(int n);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_memcpy.c
+
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 // -----------------------------------------------------------------------------
 // FUNCTION - ft_memset.c
@@ -54,8 +62,43 @@ void	*ft_memcpy(void restricted *dst, const void restricted *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 
 // -----------------------------------------------------------------------------
+// FUNCTION - ft_putchar_fd.c
+
+void	ft_putstr_fd(char *s, int fd);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_putendl_fd.c
+
+void	ft_putendl_fd(char *s, int fd);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_putnbr_fd.c
+
+void	ft_putnbr_fd(int n, int fd);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_putstr_fd.c
+
+void	ft_putstr_fd(char *s, int fd);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_strdup.c
+
+char	*ft_strdup(char *src);
+
+// -----------------------------------------------------------------------------
 // FUNCTION - ft_strlen.c
 
-int 	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_tolower.c
+
+int		ft_tolower(int c);
+
+// -----------------------------------------------------------------------------
+// FUNCTION - ft_toupper.c
+
+int		ft_toupper(int c);
 
 #endif
