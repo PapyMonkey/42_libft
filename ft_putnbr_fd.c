@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papy <aguiri@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 01:56:53 by papy              #+#    #+#             */
-/*   Updated: 2021/10/29 15:56:09 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 13:25:12 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/**
- * \brief	Write a given number on a choosen file descriptor. 
- *
- * \param	n	Integer to write.
- * \param	fd	File descriptor on which you want your output.
- */
 
 void	ft_putnbr_fd(int n, int fd)
 {

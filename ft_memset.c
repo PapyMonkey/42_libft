@@ -6,7 +6,7 @@
 /*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 06:54:52 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/29 15:54:09 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/29 17:33:38 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
+	char	*tmp;
 
 	i = 0;
 	while (i < len)
 	{
-		b[i] = c;
+		tmp[i] = c;
 		i++;
 	}
-	return (b);
+	return ((void *) tmp);
 }

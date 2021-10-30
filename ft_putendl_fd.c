@@ -6,19 +6,11 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 02:01:54 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/29 16:07:20 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 13:23:42 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/**
- * \brief	Write a given string on a choosen file descriptor followed 
- * 			by a line break.
- *
- * \param	s	String to write. 
- * \param	fd	File descriptor on which you want your output.
- */
 
 void	ft_putendl_fd(char *s, int fd)
 {
