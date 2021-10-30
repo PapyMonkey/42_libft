@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/10/30 16:30:41 by aguiri           ###   ########.fr        #
+#    Updated: 2021/10/30 17:02:14 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS				:= 	ft_bzero.c\
 						ft_isascii.c\
 						ft_isdigit.c\
 						ft_isprint.c\
+						ft_memchr.c\
 						ft_memcmp.c\
 						ft_memcpy.c\
 						ft_memset.c\

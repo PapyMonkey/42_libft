@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 16:29:59 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 17:01:43 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,18 @@ int		ft_isprint(int c);
  * \return      Length of n. 
  */
 int		ft_intlen(int n);
+
+/**
+ * \brief 		Locates the first occurrence of c (converted to an unsigned
+ * 				char) in string s. 
+ * 
+ * \param s		String to search in. 
+ * \param c		Charactered wanted. 
+ * \param n		Number of iterations to be done. 
+ * \return		Pointer to the byte located, or NULL if no such byte exists
+ * 				within n bytes.
+ */
+void	*ft_memchr(const void *s, int c, size_t n);
 
 /**
  * \brief		Compares byte string s1 against byte string s2. Both are
