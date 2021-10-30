@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:16:31 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 13:31:45 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 15:44:25 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if (ft_isalpha(c))
+	if (65 <= c && c <= 90)
 		return (c + 32);
 	else
 		return (c);
