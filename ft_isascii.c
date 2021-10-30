@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 06:07:55 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/24 06:34:37 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 16:11:34 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (ft_isalpha(c) && ft_isdigit(c))
+	if (0 <= c && c <= 127)
 		return (1);
 	else
 		return (0);
