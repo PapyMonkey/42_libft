@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 17:01:43 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 17:34:11 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,18 @@ int		memcmp(const void *s1, const void *s2, size_t n);
  * \return      Original value of dst. 
  */
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+/**
+ * \brief		Copies len bytes from string src to string dst.  The two strings
+ * 				may overlap; the copy is always done in a non-destructive
+ * 				manner. 
+ * 
+ * \param dst 	Destination string.
+ * \param src	Source string. 
+ * \param len	Number of bytes to be copied. 
+ * \return		The original value of dst. 
+ */
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
 /**
  * \brief       Writes len bytes of value c (converted to an unsigned char)
