@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 13:42:57 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 16:29:59 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,19 @@ int		ft_strlen(const char *str);
  * 				of f. Returns NULL if the allocation fails.
  */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/**
+ * \brief       Compares not more than n characters. 
+ * 
+ * \param s1    First string to be compared. 
+ * \param s2    Second string to be compared. 
+ * \param n     Number of character to compare. 
+ * \return      Integer greater than, equal to, or less than 0, according as the
+ *              string s1 is greater than, equal to, or less than the string s2.
+ *              The comparison is done using unsigned characters, so that ‘\200’
+ *              is greater than ‘\0’. 
+ */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
  * \brief	    Converts an upper-case letter to the corresponding lower-case
