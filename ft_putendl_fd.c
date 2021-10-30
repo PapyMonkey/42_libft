@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 02:01:54 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 13:23:42 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 18:11:56 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (s)
+	while (*s)
 	{
-		write(fd, s, 1);
+		ft_putchar_fd(*s, fd);
 		s++;
 	}
 	write(fd, "\n", 1);

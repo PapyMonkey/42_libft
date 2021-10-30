@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 17:34:11 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/30 18:05:17 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
  * \returns		0 if the two strings are identical, otherwise the difference
  * 				between the first two different bytes.
  */
-int		memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
  * \brief       Copies n bytes from memory area src to memory area dst.
