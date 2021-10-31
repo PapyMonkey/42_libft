@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/30 18:05:17 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/31 12:34:38 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,74 +17,85 @@
 # include <unistd.h>
 
 /**
- * \brief   Writes n zeroed bytes to the string s.
- *          If n is zero, does nothing. 
+ * \brief 		Converts the initial portion of the string pointed to by str to an 
+ * 				int representation.
  * 
- * \param s String to write on. 
- * \param n Number of zero to write.
+ * \param str 	String to be converted.
+ * \return		Int representation of the initial portion of the string. 
+ */
+int		ft_atoi(const char *str);
+
+/**
+ * \brief   	Writes n zeroed bytes to the string s.
+ *          	If n is zero, does nothing. 
+ * 
+ * \param s 	String to write on. 
+ * \param n 	Number of zero to write.
  */
 void	ft_bzero(void *s, size_t n);
 
 /**
- * \brief 	Contiguously allocates enough space for count objects that are size
- * 			bytes of memory each and returns a pointer to the allocated memory.
- * 			The allocated memory is filled with bytes of value zero.
+ * \brief 		Contiguously allocates enough space for count objects that are size
+ * 				bytes of memory each and returns a pointer to the allocated memory.
+ * 				The allocated memory is filled with bytes of value zero.
  * 
  * \param count	Number of elements.
- * \param size Size of the elements.
- * \return If successful, return a pointer to the allocated memory.
- * 					Otherwise, return NULL. 
+ * \param size 	Size of the elements.
+ * \return 		If successful, return a pointer to the allocated memory.
+ * 				Otherwise, return NULL. 
  */
 void	*ft_calloc(size_t count, size_t size);
 
 /**
- * \brief   Tests for any character for which isalpha() or isdigit() is true.
+ * \brief   	Tests for any character for which isalpha() or isdigit() is true.
  * 
- * \param c Character to be tested. 
- * \return  1 if True, 0 if False.
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
  */
 int		ft_isalnum(int c);
 
 /**
- * \brief Tests for any character for which isupper() or islower() is true.
+ * \brief 		Tests for any character for which isupper() or islower() is true.
  * 
- * \param c Character to be tested. 
- * \return  1 if True, 0 if False.
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
  */
 int		ft_isalpha(int c);
 
 /**
- * \brief   Tests for an ASCII character, which is any character between 0 and
- *          127 inclusive.
+ * \brief   	Tests for an ASCII character, which is any character between 0 and
+ *          	127 inclusive.
  * 
- * \param c Character to be tested. 
- * \return  1 if True, 0 if False.
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
  */
 int		ft_isascii(int c);
 
 /**
- * \brief   Tests for a decimal digit character.
+ * \brief   	Tests for a decimal digit character.
  * 
- * \param c Character to be tested. 
- * \return  1 if True, 0 if False.
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
  */
 int		ft_isdigit(int c);
 
 /**
- * \brief   Tests for any printing character, including space (‘ ’).
+ * \brief   	Tests for any printing character, including space (‘ ’).
  * 
- * \param c Character to be tested. 
- * \return  1 if True, 0 if False.
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
  */
 int		ft_isprint(int c);
 
 /**
- * \brief       Computes the number of digits in an integer.
- * 
- * \param n     Input integer. 
- * \return      Length of n. 
+ * \brief		Allocate (with malloc()) and returns a string of characters
+ * 				representing the integer received as argument.
+ * 				Negative numbers must be handled.
+ *
+ * \param n		Integer to be converted.
+ * \return		String that represent the integer, NULL if the allocation fails.
  */
-int		ft_intlen(int n);
+char	*ft_itoa(int n);
 
 /**
  * \brief 		Locates the first occurrence of c (converted to an unsigned
@@ -130,7 +141,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
  * \param dst 	Destination string.
  * \param src	Source string. 
  * \param len	Number of bytes to be copied. 
- * \return		The original value of dst. 
+ * \return		Original value of dst. 
  */
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
@@ -179,6 +190,31 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 /**
+ * \brief		Allocate (with malloc()) and returns an array of strings
+ * 				obtained by separating s with the character c, used as
+ * 				delimiter. The array must be terminated by NULL.
+ *
+ * \param s		Input string to be splitted.
+ * \param c		Delimiting character.
+ *
+ * \return		2D string containing the splitted string. 
+ */
+char	**ft_split(char const *s, char c);
+
+/**
+ * \brief		Locates the first occurrence of c (converted to a char) in the
+ * 				string pointed to by s.  The terminating null character is
+ * 				considered to be part of the string; therefore if c is ‘\0’,
+ * 				the functions locate the terminating ‘\0’.
+ * 
+ * \param s 	String to search in.
+ * \param c		Character to be found. 
+ * \return		Pointer to the located character, or NULL if the character
+ * 				does not appear in the string.
+ */
+char	*ft_strchr(const char *s, int c);
+
+/**
  * \brief	    Allocates sufficient memory for a copy of the string, does the
  * 			    copy, and returns a pointer to it.
  *
@@ -201,6 +237,16 @@ char	*ft_strdup(char *src);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /**
+ * \brief		Allocate (with malloc()) and return a new string who
+ * 				concatenate s1 and s2. 
+ * 
+ * \param s1	Prefix string. 
+ * \param s2	Suffix string. 
+ * \return		New string, NULL if the allocation fails. 
+ */
+char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
  * \brief       Computes the length of the string. 
  * 
  * \param str   Input string. 
@@ -215,7 +261,6 @@ int		ft_strlen(const char *str);
  *
  * \param s		String to iterate on. 
  * \param f		Function to apply on each character.
- *
  * \return		The character string resulting from the successive applications
  * 				of f. Returns NULL if the allocation fails.
  */
@@ -235,11 +280,61 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
+ * \brief		Locates the first occurrence of the null-terminated string
+ * 				needle in the string haystack, where not more than len
+ * 				characters are searched. 
+ * 
+ * \param haystack	String to search in.
+ * \param needle	String to be found. 
+ * \param len		Number of bytes to be scanned in haystack. 
+ * \return			If needle is an empty string, haystack is returned; if
+ * 					needle occurs nowhere in haystack, NULL is returned;
+ * 					otherwise a pointer to the first character of the first
+ * 					occurrence of needle is returned. 
+ */
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+/**
+ * \brief		Locates the last occurrence of c (converted to a char) in the
+ * 				string pointed to by s.  The terminating null character is
+ * 				considered to be part of the string; therefore if c is ‘\0’,
+ * 				the functions locate the terminating ‘\0’.
+ * 
+ * \param s 	String to search in.
+ * \param c		Character to be found. 
+ * \return		Pointer to the located character, or NULL if the character
+ * 				does not appear in the string.
+ */
+char	*ft_strrchr(const char *s, int c);
+
+/**
+ * \brief 		Allocate (with malloc()) and returns a copy of the string s1,
+ * 				without the characters specified in specified in set at the
+ * 				beginning and end of the string.
+ * 
+ * \param s1	String to be trimmed. 
+ * \param set	Character reference set to be trimmed. 
+ * \return		Trimmed string. NULL if the allocation fails. 
+ */
+char	*ft_strtrim(const char *s1, const char *set);
+
+/**
+ * \brief 		Allocate (with malloc()) and returns a string of string from
+ * 				the string s. This new string starts at index start and
+ * 				has the maximum size len.
+ * 
+ * \param s		String to be copied. 
+ * \param start	Index of the new string in s. 
+ * \param len	Maximum length of the new string. 
+ * \return		New allocated string. Returns NULL if allocation fails. 
+ */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/**
  * \brief	    Converts an upper-case letter to the corresponding lower-case
  * 			    letter.
  *
  * \param c     Decimal Ascii value of the letter to be converted.
- *
  * \returns		If the argument is an upper-case letter, returns the
  * 				corresponding lower-case. Otherwise, the argument is returned
  * 				unchanged.
@@ -251,7 +346,6 @@ int		ft_tolower(int c);
  * 			    letter.
  *
  * \param c     Decimal Ascii value of the letter to be converted.
- *
  * \returns		If the argument is a lower-case letter, returns the
  * 				corresponding upper-case. Otherwise, the argument is returned
  * 				unchanged.

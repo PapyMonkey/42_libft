@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 21:40:22 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/31 12:26:34 by aguiri           ###   ########.fr       */
+/*   Created: 2021/10/30 23:57:32 by aguiri            #+#    #+#             */
+/*   Updated: 2021/10/31 00:23:40 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*s1_tmp;
-	unsigned char	*s2_tmp;
+	int		len_s1;
+	int		len_s2;
+	int		i;
+	char	*out;
 
-	if (n == 0)
-		return (0);
-	s1_tmp = (unsigned char *)s1;
-	s2_tmp = (unsigned char *)s2;
-	while (n > 1 && *s1_tmp == *s2_tmp)
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	out = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (out == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len_s1)
 	{
-		s1_tmp++;
-		s2_tmp++;
-		n--;
+		out[i] = (char) s1[i];
+		i++;
 	}
-	return (*s1_tmp - *s2_tmp);
+	i = 0;
+	while (i < len_s2)
+	{
+		out[i + len_s1] = (char) s2[i];
+		i++;
+	}
+	out[len_s1 + len_s2] = '\0';
+	return (out);
 }
