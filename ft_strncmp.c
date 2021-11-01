@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 01:48:59 by papy              #+#    #+#             */
-/*   Updated: 2021/10/30 18:07:32 by aguiri           ###   ########.fr       */
+/*   Created: 2021/10/30 16:16:43 by aguiri            #+#    #+#             */
+/*   Updated: 2021/10/30 16:21:29 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	write(fd, &c, 1);
+	size_t	n_count;
+
+	n_count = 1;
+	if (n == 0)
+		return (0);
+	while (n_count < n && *s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+		n_count++;
+	}
+	return (*s1 - *s2);
 }

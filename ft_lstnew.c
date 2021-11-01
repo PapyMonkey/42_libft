@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 04:59:49 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/24 06:23:16 by aguiri           ###   ########.fr       */
+/*   Created: 2021/11/01 13:17:30 by aguiri            #+#    #+#             */
+/*   Updated: 2021/11/01 13:23:00 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <ctype.h>
-#include <stdio.h>
-
-int main(int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	(void) argc;
-	(void) argv;
+	t_list	*out;
 
-	// Test isascii
-	printf("%d\n", isascii(128));
+	out = malloc(sizeof(t_list));
+	if (!out)
+		return (NULL);
+	out->content = content;
+	out->next = NULL;
+	return (out);
 }

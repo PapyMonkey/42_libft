@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 01:48:59 by papy              #+#    #+#             */
-/*   Updated: 2021/10/30 18:07:32 by aguiri           ###   ########.fr       */
+/*   Created: 2021/10/31 13:22:37 by aguiri            #+#    #+#             */
+/*   Updated: 2021/10/31 17:36:40 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	write(fd, &c, 1);
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	out;
+
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (src_len + dstsize);
+	out = src_len + dst_len;
+	src_len = 0;
+	while (src[src_len] && dst_len + 1 < dstsize)
+		dst[dst_len++] = src[src_len++];
+	dst[dst_len] = 0;
+	return (out);
 }
