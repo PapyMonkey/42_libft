@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 16:40:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 17:03:33 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -395,6 +395,8 @@ int		ft_toupper(int c);
 // ****************************************************************************
 // Functions - Lists
 
+void	ft_lstadd_back(t_list **alst, t_list *new);
+
 /**
  * \brief		Add the 'new' element at the beginning of the list.
  * 
@@ -402,6 +404,14 @@ int		ft_toupper(int c);
  * \param new	The address of the pointer to the element to add to the list.
  */
 void	ft_lstadd_front(t_list **alst, t_list *new);
+
+/**
+ * \brief		Grab the list's last element. 
+ * 
+ * \param lst	First element of the list. 
+ * \return		Last element of the list. 
+ */
+t_list	*ft_lstlast(t_list *lst);
 
 /**
  * \brief		Allocate (with malloc()) and returns a new element. The
