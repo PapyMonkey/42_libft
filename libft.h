@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/31 18:41:59 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 13:26:35 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+// ****************************************************************************
+// Structures
+
+typedef struct s_list {
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+// ****************************************************************************
+// Functions
 
 /**
  * \brief 		Converts the initial portion of the string pointed to by str to an 
@@ -377,5 +388,18 @@ int		ft_tolower(int c);
  * 				unchanged.
  */
 int		ft_toupper(int c);
+
+// ****************************************************************************
+// Functions - Lists
+
+/**
+ * \brief		Allocate (with malloc()) and returns a new element. The
+ * 				variable content is initialized with the value of the content
+ * 				parameter. The variable next is initialized to NULL.
+ * 
+ * \param content	Content of the new element.
+ * \return			Pointer to the new element. 
+ */
+t_list	*ft_lstnew(void *content);
 
 #endif

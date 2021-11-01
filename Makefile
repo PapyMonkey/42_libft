@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/10/31 18:32:47 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/01 15:46:21 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,9 +53,9 @@ SRCS				:= 	ft_atoi.c\
 						ft_tolower.c\
 						ft_toupper.c
 OBJS 				:= $(SRCS:.c=.o)
+SRCS_BONUS			:= 	ft_lstnew.c
+OBJS_BONUS			:= $(SRCS_BONUS:.c=.o)
 HDRS				:= libft.h
-
-#OBJS_PATH			:= bin
 
 # -----------------------------------------------------------------------------
 
@@ -65,11 +65,15 @@ $(NAME):			$(OBJS)
 					@$(AR) rcs $@ $^ 
 					@echo "Complete."
 
+bonus:				$(OBJS_BONUS)
+					@$(AR) rcs $(NAME) $^
+
 %.o: 				%.c $(HDRS)
 					@$(CC) -o $@ -c $< -I $(HDRS) $(CFLAGS)
 
 clean:		
 					@$(RM) $(OBJS)
+					@$(RM) $(OBJS_BONUS)
 
 fclean:				clean	
 					@$(RM) $(NAME)
