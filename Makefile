@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/01 17:13:39 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/01 17:47:15 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,8 @@ SRCS				:= 	ft_atoi.c\
 OBJS 				:= $(SRCS:.c=.o)
 SRCS_BONUS			:= 	ft_lstadd_back.c\
 						ft_lstadd_front.c\
+						ft_lstclear.c\
+						ft_lstdelone.c\
 						ft_lstlast.c\
 						ft_lstnew.c\
 						ft_lstsize.c
