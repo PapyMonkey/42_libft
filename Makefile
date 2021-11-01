@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/01 16:12:50 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/01 16:41:18 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,8 @@ SRCS				:= 	ft_atoi.c\
 						ft_toupper.c
 OBJS 				:= $(SRCS:.c=.o)
 SRCS_BONUS			:= 	ft_lstadd_front.c\
-						ft_lstnew.c
+						ft_lstnew.c\
+						ft_lstsize.c
 OBJS_BONUS			:= $(SRCS_BONUS:.c=.o)
 HDRS				:= libft.h
 

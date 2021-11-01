@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 16:03:01 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 16:40:30 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 // ****************************************************************************
 // Structures
 
+/**
+ * \brief		Contains the links of the list.
+ */
 typedef struct s_list {
 	void			*content;
 	struct s_list	*next;
@@ -409,5 +412,12 @@ void	ft_lstadd_front(t_list **alst, t_list *new);
  * \return			Pointer to the new element. 
  */
 t_list	*ft_lstnew(void *content);
+
+/**
+ * \brief		Count the number of elemets of the list.
+ * 
+ * \param lst	First element of the list.
+ */
+int		ft_lstsize(t_list *lst);
 
 #endif
