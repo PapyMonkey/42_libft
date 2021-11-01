@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:49:04 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 16:56:50 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 17:10:02 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp1;
-	t_list	*tmp2;
-	int		lst_len;
-	int		i;
-
-	tmp1 = lst;
-	lst_len = ft_lstsize(tmp1);
-	i = 1;
-	while (i < lst_len)
-	{
-		tmp2 = tmp1;
-		tmp1 = tmp2->next;
-		i++;
-	}
-	return (tmp1);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
