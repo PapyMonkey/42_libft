@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 17:56:11 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 18:29:59 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -432,12 +432,34 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 /**
+ * \brief		Iterates over the list lst and applies the function f to the
+ * 				content of each element.
+ * 
+ * \param lst	Address of the pointer to an element of the list.
+ * \param f		Adresss of the function to be applied.
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
  * \brief		Grab the list's last element. 
  * 
  * \param lst	First element of the list. 
  * \return		Last element of the list. 
  */
 t_list	*ft_lstlast(t_list *lst);
+
+/**
+ * \brief		Iterates over the list lst and applies the function f to the
+ * 				content of each element. Create a new list resulting from the
+ * 				successive applications of f. The function del is there to
+ * 				destroy the content of an element element if necessary.
+ * 
+ * \param lst	First element of the list. 
+ * \param f		Adresss of the function to be applied.
+ * \param del	Function's address used to delete the element's content.
+ * \return		New created list. NULL if the allocation fails.
+ */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /**
  * \brief		Allocate (with malloc()) and returns a new element. The
