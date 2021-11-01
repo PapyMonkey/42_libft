@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 17:03:33 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 17:21:42 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -395,6 +395,12 @@ int		ft_toupper(int c);
 // ****************************************************************************
 // Functions - Lists
 
+/**
+ * \brief		Add the 'new' element at the end of the list.
+ * 
+ * \param alst	The address of the pointer to the first element of the list.
+ * \param new	The address of the pointer to the element to add to the list.
+ */
 void	ft_lstadd_back(t_list **alst, t_list *new);
 
 /**
