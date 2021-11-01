@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/31 12:34:38 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/10/31 18:41:59 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,8 +215,8 @@ char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 
 /**
- * \brief	    Allocates sufficient memory for a copy of the string, does the
- * 			    copy, and returns a pointer to it.
+ * \brief	    Allocate (with malloc()) sufficient memory for a copy of the
+ * 				string, does the copy, and returns a pointer to it.
  *
  * \param src	Source string to be copied.
  *
@@ -245,6 +245,32 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  * \return		New string, NULL if the allocation fails. 
  */
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * \brief		Appends string src to the end of dst. It will append at most
+ * 				dstsize - strlen(dst) - 1 characters. It will then
+ * 				NUL-terminate the string, unless dstsize is 0 or the original
+ * 				dst string was longer than dstsize (in practice this should not
+ * 				happen as it means that either dstsize is incorrect or that dst
+ * 				is not a proper string). 
+ * 
+ * \param dst		Destination string.
+ * \param src		Source string, to be appened at the end of dst.
+ * \param dstsize	Size of the destination buffer.
+ * \return		Total length of the string the function tried to create. 
+ */
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
+/**
+ * \brief		Copies up to dstsize - 1 characters from the string src to dst,
+ * 				NUL-terminating the result if dstsize is not 0.
+ * 
+ * \param dst		Destination string.
+ * \param src		Source string, to be appened at the end of dst.
+ * \param dstsize	Size of the destination buffer.
+ * \return		Total length of the string the function tried to create. 
+ */
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 /**
  * \brief       Computes the length of the string. 

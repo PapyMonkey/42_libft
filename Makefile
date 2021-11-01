@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/10/31 12:01:18 by aguiri           ###   ########.fr        #
+#    Updated: 2021/10/31 18:32:47 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRCS				:= 	ft_atoi.c\
 						ft_strdup.c\
 						ft_striteri.c\
 						ft_strjoin.c\
+						ft_strlcat.c\
+						ft_strlcpy.c\
 						ft_strlen.c\
 						ft_strmapi.c\
 						ft_strncmp.c\
