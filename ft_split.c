@@ -1,56 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_v2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguiri <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:54:37 by aguiri            #+#    #+#             */
-/*   Updated: 2021/10/29 13:17:20 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/01 20:48:37 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
 /**
- * \fn			int ft_char_is_separator(char c, char *charset)
- * \brief		Check if a character is a separator. 
- *
- * \param	c	Character to evaluate.
- * \param	charset	List of separators.
- *
- * \return		1 if the character IS a separator,
- * 			0 otherwise.
+ * \brief		Check if the given character is a separator or not.
+ * 
+ * \param c		Character to be tested.
+ * \param sep	Separator.
+ * \return		1 if it is, 0 otherwise.
  */
-
-int	ft_char_is_separator(char c, char *charset)
+static int	ft_char_is_sep(char c, char sep)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i] != '\0')
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
-	if (c == '\0')
-		return (1);
-	return (0);
+	return (c == sep || c == '\0');
 }
 
 /**
- * \fn		int ft_count_words(char *str, char *charset)
- * \brief	Count the numbers of words in the string based on the
- * 		given separators.
+ * \brief		Count the numbers of words in the string based on the
+ * 				given separators.
  *
- * \param 	str		String containing the words.
- * \param	charset		List of separators.
+ * \param str	String containing the words.
+ * \param c		Delimiting character.
  *
- * Returns  	Number of words counted. 
+ * \return  	Number of words counted. 
  */
-
-int	ft_count_words(char *str, char *charset)
+static int	ft_count_words(char *str, char c)
 {
 	int	i;
 	int	words;
@@ -59,8 +42,7 @@ int	ft_count_words(char *str, char *charset)
 	words = 0;
 	while (str[i] != '\0')
 	{
-		if (ft_char_is_separator(str[i + 1], charset)
-			&& !ft_char_is_separator(str[i], charset))
+		if (ft_char_is_sep(str[i + 1], c) && !ft_char_is_sep(str[i], c))
 			words++;
 		i++;
 	}
@@ -68,20 +50,18 @@ int	ft_count_words(char *str, char *charset)
 }
 
 /**
- * \fn		void ft_write_words(char *dest, char *src, char *charset)
- * \brief	Write a word in a destination string.
+ * \brief		Write a word in a destination string.
  *
- * \param	dest		Destination string.
- * \param 	src		String containing the words.
- * \param	charset		List of separators.
+ * \param dest	Destination string.
+ * \param src	String containing the words.
+ * \param c		Delimiting character.
  */
-
-void	ft_write_words(char *dest, char *src, char *charset)
+static void	ft_write_words(char *dest, const char *src, int len)
 {
 	int	i;
 
 	i = 0;
-	while (!ft_char_is_separator(src[i], charset))
+	while (i < len)
 	{
 		dest[i] = src[i];
 		i++;
@@ -90,15 +70,13 @@ void	ft_write_words(char *dest, char *src, char *charset)
 }
 
 /**
- * \fn		void ft_write_tab(char **str_split, char *str, char *charset)
- * \brief	Write the different words in a destination 2D array.
+ * \brief		Write the different words in a destination 2D array.
  *
- * \param	str_split	Destination 2D array.
- * \param 	str		String containing the words.
- * \param	charset		List of separators.
+ * \param str_split	Destination 2D array.
+ * \param str		String containing the words.
+ * \param c			Delimiting character.
  */
-
-void	ft_write_tab(char **str_split, char *str, char *charset)
+void	ft_write_tab(char **str_split, const char *str, char c)
 {
 	int	i;
 	int	j;
@@ -108,15 +86,15 @@ void	ft_write_tab(char **str_split, char *str, char *charset)
 	n_word = 0;
 	while (str[i] != '\0')
 	{
-		if (ft_char_is_separator(str[i], charset))
+		if (ft_char_is_sep(str[i], c))
 			i++;
 		else
 		{
 			j = 0;
-			while (!ft_char_is_separator(str[i + j], charset))
+			while (!ft_char_is_sep(str[i + j], c))
 				j++;
 			str_split[n_word] = malloc(sizeof(char) * (j + 1));
-			ft_write_words(str_split[n_word], str + i, charset);
+			ft_write_words(str_split[n_word], str + i, j);
 			i += j;
 			n_word++;
 		}
@@ -124,24 +102,35 @@ void	ft_write_tab(char **str_split, char *str, char *charset)
 }
 
 /**
- * \fn		char **ft_split(char *str, char *charset)
- * \brief	General function that use all of the above to properly split
- * 		a string. Returns the splitted string as a 2D array.
+ * \brief		Allocate (with malloc()) and returns an array of strings
+ * 				obtained by separating s with the character c, used as
+ * 				delimiter. The array must be terminated by NULL.
  *
- * \param	str		Input string to split.
- * \param 	charset		List of separators.
+ * \param s		Input string to be splitted.
+ * \param c		Delimiting character.
  *
- * Returns	2D string containing the splitted str. 
+ * \return		2D string containing the splitted string. 
  */
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	char	**str_splitted;
 	int		n_words;
 
-	n_words = ft_count_words(str, charset);
+	if (s == NULL)
+		return (NULL);
+	n_words = ft_count_words((char *) s, c);
 	str_splitted = malloc(sizeof(char *) * (n_words + 1));
+	if (!str_splitted)
+		return (NULL);
 	str_splitted[n_words] = 0;
-	ft_write_tab(str_splitted, str, charset);
+	ft_write_tab(str_splitted, s, c);
 	return (str_splitted);
 }
+/*
+int	main(void)
+{
+  char **tab = ft_split("chinimala", ' ');
+  return 0;
+}
+*/
