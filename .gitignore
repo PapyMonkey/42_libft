@@ -54,3 +54,4 @@ dkms.conf
 # Custom rules
 .*.swp
 .DS_Store
+rsc/
