@@ -7,6 +7,3 @@
 [submodule "libfttester_jtoty"]
 	path = libfttester_jtoty
 	url = https://github.com/jtoty/Libftest
-[submodule "libfttester_jtoty2"]
-	path = libfttester_jtoty2
-	url = https://github.com/jtoty/Libftest
