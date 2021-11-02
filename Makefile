@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/01 21:00:16 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/02 19:51:56 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,15 @@ AR 					?= ar
 RM					?= rm -f
 MKDIR				?= mkdir -p
 
-SRCS				:= 	ft_atoi.c\
+# ********************************* P A T H S *********************************
+
+SRCS_PATH			:= src
+OBJS_PATH			:= bin
+HDRS_PATH			:= include
+
+# ********************************* N A M E S *********************************
+
+SRCS_NAME			:= 	ft_atoi.c\
 						ft_bzero.c\
 						ft_calloc.c\
 						ft_isalnum.c\
@@ -27,6 +35,15 @@ SRCS				:= 	ft_atoi.c\
 						ft_isdigit.c\
 						ft_isprint.c\
 						ft_itoa.c\
+						ft_list/ft_lstadd_back.c\
+						ft_list/ft_lstadd_front.c\
+						ft_list/ft_lstclear.c\
+						ft_list/ft_lstdelone.c\
+						ft_list/ft_lstiter.c\
+						ft_list/ft_lstlast.c\
+						ft_list/ft_lstmap.c\
+						ft_list/ft_lstnew.c\
+						ft_list/ft_lstsize.c\
 						ft_memchr.c\
 						ft_memcmp.c\
 						ft_memcpy.c\
@@ -52,38 +69,26 @@ SRCS				:= 	ft_atoi.c\
 						ft_substr.c\
 						ft_tolower.c\
 						ft_toupper.c
-OBJS 				:= $(SRCS:.c=.o)
-SRCS_BONUS			:= 	ft_lstadd_back.c\
-						ft_lstadd_front.c\
-						ft_lstclear.c\
-						ft_lstdelone.c\
-						ft_lstiter.c\
-						ft_lstlast.c\
-						ft_lstmap.c\
-						ft_lstnew.c\
-						ft_lstsize.c
-OBJS_BONUS			:= $(SRCS_BONUS:.c=.o)
-HDRS				:= libft.h
+SRCS				:= $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
+OBJS 				:= $(addprefix $(OBJS_PATH)/, $(SRCS_NAME:.c=.o))
 
-# -----------------------------------------------------------------------------
+# ********************************* R U L E S *********************************
 
 all:				$(NAME)
 					
-%.o: 				%.c $(HDRS)
-					@$(CC) -o $@ -c $< -I $(HDRS) $(CFLAGS)
+$(OBJS_PATH)/%.o: 	$(SRCS_PATH)/%.c $(HDRS_PATH)
+					@$(MKDIR) $(dir $@)
+					@$(CC) -o $@ -c $< -I $(HDRS_PATH) $(CFLAGS)
 
 $(NAME):			$(OBJS)
 					@$(AR) rcs $@ $^ 
 					@echo "Complete."
 
-bonus:				$(OBJS_BONUS) $(OBJS)
-					@$(AR) rcs $(NAME) $^
-
 clean:		
 					@$(RM) $(OBJS)
-					@$(RM) $(OBJS_BONUS)
 
 fclean:				clean	
+					@$(RM) -r $(OBJS_PATH)
 					@$(RM) $(NAME)
 
 re:					fclean all
