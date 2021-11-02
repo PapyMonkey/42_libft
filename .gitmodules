@@ -1,0 +1,9 @@
+[submodule "libfttester_notjustjoe"]
+	path = libfttester_notjustjoe
+	url = https://github.com/NotJustJoe/libfttester
+[submodule "libfttester_tripouille"]
+	path = libfttester_tripouille
+	url = https://github.com/Tripouille/libftTester
+[submodule "libfttester_jtoty"]
+	path = libfttester_jtoty
+	url = https://github.com/jtoty/Libftest
