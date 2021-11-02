@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_v2.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:54:37 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/01 20:48:37 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/02 12:30:08 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static void	ft_write_words(char *dest, const char *src, int len)
  * \param str		String containing the words.
  * \param c			Delimiting character.
  */
-void	ft_write_tab(char **str_split, const char *str, char c)
+static void	ft_write_tab(char **str_split, const char *str, char c)
 {
 	int	i;
 	int	j;
