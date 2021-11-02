@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/02 19:59:29 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/02 20:28:45 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,15 +35,15 @@ SRCS_NAME			:= 	ft_atoi.c\
 						ft_isdigit.c\
 						ft_isprint.c\
 						ft_itoa.c\
-						ft_list/ft_lstadd_back.c\
-						ft_list/ft_lstadd_front.c\
-						ft_list/ft_lstclear.c\
-						ft_list/ft_lstdelone.c\
-						ft_list/ft_lstiter.c\
-						ft_list/ft_lstlast.c\
-						ft_list/ft_lstmap.c\
-						ft_list/ft_lstnew.c\
-						ft_list/ft_lstsize.c\
+						ft_lst/ft_lstadd_back.c\
+						ft_lst/ft_lstadd_front.c\
+						ft_lst/ft_lstclear.c\
+						ft_lst/ft_lstdelone.c\
+						ft_lst/ft_lstiter.c\
+						ft_lst/ft_lstlast.c\
+						ft_lst/ft_lstmap.c\
+						ft_lst/ft_lstnew.c\
+						ft_lst/ft_lstsize.c\
 						ft_memchr.c\
 						ft_memcmp.c\
 						ft_memcpy.c\
