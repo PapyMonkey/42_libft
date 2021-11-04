@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/02 20:28:45 by aguiri           ###   ########.fr        #
+#    Updated: 2021/11/04 01:57:03 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,13 @@ SRCS_NAME			:= 	ft_atoi.c\
 						ft_memcpy.c\
 						ft_memmove.c\
 						ft_memset.c\
-						ft_putchar_fd.c\
-						ft_putendl_fd.c\
-						ft_putnbr_fd.c\
-						ft_putstr_fd.c\
+						ft_put/ft_putaddress_fd.c\
+						ft_put/ft_putchar_fd.c\
+						ft_put/ft_putendl_fd.c\
+						ft_put/ft_putnbr_base_fd.c\
+						ft_put/ft_putnbr_uns_fd.c\
+						ft_put/ft_putnbr_fd.c\
+						ft_put/ft_putstr_fd.c\
 						ft_split.c\
 						ft_strchr.c\
 						ft_strdup.c\
