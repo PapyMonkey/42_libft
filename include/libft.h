@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/02 20:28:06 by aguiri           ###   ########.fr       */
+/*   Updated: 2021/11/04 00:31:48 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 # include <unistd.h>
 
 # include "ft_lst.h"
+# include "ft_put.h"
 
 // ****************************************************************************
-// Functions
+// Misc. functions
 
 /**
  * \brief 		Converts the initial portion of the string pointed to by str to an 
@@ -160,39 +161,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
  * \return      First argument, b. 
  */
 void	*ft_memset(void *b, int c, size_t len);
-
-/**
- * \brief	    Write a given character on a choosen file descriptor. 
- *
- * \param c		Character to be written. 
- * \param fd	File descriptor on which you want your output.
- */
-void	ft_putchar_fd(char c, int fd);
-
-/**
- * \brief       Write a given string on a choosen file descriptor followed
- * 			    by a line break.
- *
- * \param s     String to be written. 
- * \param fd	File descriptor on which you want your output.
- */
-void	ft_putendl_fd(char *s, int fd);
-
-/**
- * \brief   	Write a given number on a choosen file descriptor. 
- *
- * \param	n	Integer to be written.
- * \param	fd	File descriptor on which you want your output.
- */
-void	ft_putnbr_fd(int n, int fd);
-
-/**
- * \brief       Write a given string on a choosen file descriptor. 
- *
- * \param s     String to be written. 
- * \param fd    File descriptor on which you want your output.
- */
-void	ft_putstr_fd(char *s, int fd);
 
 /**
  * \brief		Allocate (with malloc()) and returns an array of strings
