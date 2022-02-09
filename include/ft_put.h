@@ -6,14 +6,15 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 00:29:29 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/04 02:00:48 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/02/09 15:24:16 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUT_H
 # define FT_PUT_H
 
-# include <unistd.h>
+// ****************************************************************************
+// Functions - Put/print functions
 
 /**
  * \brief		Write a pointer address in hexadecimal on a choosen file
