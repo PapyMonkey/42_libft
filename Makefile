@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2021/11/02 20:28:45 by aguiri           ###   ########.fr        #
+#    Updated: 2022/02/12 23:25:14 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ HDRS_PATH			:= include
 SRCS_NAME			:= 	ft_atoi.c\
 						ft_bzero.c\
 						ft_calloc.c\
+						ft_get_next_line.c\
 						ft_isalnum.c\
 						ft_isalpha.c\
 						ft_isascii.c\
@@ -44,29 +45,32 @@ SRCS_NAME			:= 	ft_atoi.c\
 						ft_lst/ft_lstmap.c\
 						ft_lst/ft_lstnew.c\
 						ft_lst/ft_lstsize.c\
-						ft_memchr.c\
-						ft_memcmp.c\
-						ft_memcpy.c\
-						ft_memmove.c\
-						ft_memset.c\
-						ft_putchar_fd.c\
-						ft_putendl_fd.c\
-						ft_putnbr_fd.c\
-						ft_putstr_fd.c\
+						ft_mem/ft_memchr.c\
+						ft_mem/ft_memcmp.c\
+						ft_mem/ft_memcpy.c\
+						ft_mem/ft_memmove.c\
+						ft_mem/ft_memset.c\
+						ft_put/ft_putaddress_fd.c\
+						ft_put/ft_putchar_fd.c\
+						ft_put/ft_putendl_fd.c\
+						ft_put/ft_putnbr_base_fd.c\
+						ft_put/ft_putnbr_uns_fd.c\
+						ft_put/ft_putnbr_fd.c\
+						ft_put/ft_putstr_fd.c\
 						ft_split.c\
-						ft_strchr.c\
-						ft_strdup.c\
-						ft_striteri.c\
-						ft_strjoin.c\
-						ft_strlcat.c\
-						ft_strlcpy.c\
-						ft_strlen.c\
-						ft_strmapi.c\
-						ft_strncmp.c\
-						ft_strnstr.c\
-						ft_strrchr.c\
-						ft_strtrim.c\
-						ft_substr.c\
+						ft_str/ft_strchr.c\
+						ft_str/ft_strdup.c\
+						ft_str/ft_striteri.c\
+						ft_str/ft_strjoin.c\
+						ft_str/ft_strlcat.c\
+						ft_str/ft_strlcpy.c\
+						ft_str/ft_strlen.c\
+						ft_str/ft_strmapi.c\
+						ft_str/ft_strncmp.c\
+						ft_str/ft_strnstr.c\
+						ft_str/ft_strrchr.c\
+						ft_str/ft_strtrim.c\
+						ft_str/ft_substr.c\
 						ft_tolower.c\
 						ft_toupper.c
 SRCS				:= $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
