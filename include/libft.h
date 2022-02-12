@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2022/02/09 15:22:25 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/02/12 23:24:19 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <unistd.h>
 
 # include "ft_lst.h"
+# include "ft_mem.h"
 # include "ft_put.h"
 # include "ft_str.h"
 
@@ -55,6 +56,16 @@ void	ft_bzero(void *s, size_t n);
  * 				Otherwise, return NULL. 
  */
 void	*ft_calloc(size_t count, size_t size);
+
+/**
+ * \brief 		Write a function that returns a line read from a file
+ 				descriptor.
+ * 
+ * \param fd	File descriptor to read on.
+ * \return 		Read line:  correct behavior.
+ * 				NULL: there is nothing else to read, or an error occurred.
+ */
+char	*ft_get_next_line(int fd);
 
 /**
  * \brief   	Tests for any character for which isalpha() or isdigit() is true.

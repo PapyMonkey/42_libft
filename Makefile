@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/02/09 15:23:06 by aguiri           ###   ########.fr        #
+#    Updated: 2022/02/12 23:25:14 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ HDRS_PATH			:= include
 SRCS_NAME			:= 	ft_atoi.c\
 						ft_bzero.c\
 						ft_calloc.c\
+						ft_get_next_line.c\
 						ft_isalnum.c\
 						ft_isalpha.c\
 						ft_isascii.c\
