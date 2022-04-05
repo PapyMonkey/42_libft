@@ -12,7 +12,7 @@
 | **Libft authorized** | `n/a` |
 | **Description** | `Write your own library:  a collection of functions that will be a useful tool for your cursus.` |
 
-![Libft grade](https://badge42.herokuapp.com/api/project/aguiri/Libft)
+![Libft grade](https://badge42.vercel.app/api/v2/cl1m1z528009409l5bo2ovzih/project/2380225)
 
 ## Function list
 
