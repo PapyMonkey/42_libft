@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/02/12 23:25:14 by aguiri           ###   ########.fr        #
+#    Updated: 2022/04/08 12:59:42 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,15 @@ SRCS_NAME			:= 	ft_atoi.c\
 						ft_mem/ft_memcpy.c\
 						ft_mem/ft_memmove.c\
 						ft_mem/ft_memset.c\
+						ft_printf/ft_printf_arg.c\
+						ft_printf/ft_printf_putaddress_fd.c\
+						ft_printf/ft_printf_putchar_fd.c\
+						ft_printf/ft_printf_putendl_fd.c\
+						ft_printf/ft_printf_putnbr_base_fd.c\
+						ft_printf/ft_printf_putnbr_fd.c\
+						ft_printf/ft_printf_putnbr_uns_fd.c\
+						ft_printf/ft_printf_putstr_fd.c\
+						ft_printf/ft_printf.c\
 						ft_put/ft_putaddress_fd.c\
 						ft_put/ft_putchar_fd.c\
 						ft_put/ft_putendl_fd.c\
@@ -86,7 +95,7 @@ $(OBJS_PATH)/%.o: 	$(SRCS_PATH)/%.c $(HDRS_PATH)
 
 $(NAME):			$(OBJS)
 					@$(AR) rcs $@ $^ 
-					@echo "Complete."
+					@echo "libft: complete."
 
 clean:		
 					@$(RM) $(OBJS)

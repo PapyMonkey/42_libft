@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2022/02/12 23:24:19 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/04/08 12:16:03 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 # include "ft_lst.h"
 # include "ft_mem.h"
+# include "ft_printf.h"
 # include "ft_put.h"
 # include "ft_str.h"
 
