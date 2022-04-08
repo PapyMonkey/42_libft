@@ -6,27 +6,45 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/04/08 12:59:42 by aguiri           ###   ########.fr        #
+#    Updated: 2022/04/08 14:21:56 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				?= libft.a
+NAME				?=	libft.a
 
-CC					= gcc
-CFLAGS				?= -Wall -Wextra -Werror
-AR 					?= ar
-RM					?= rm -f
-MKDIR				?= mkdir -p
+CC					=	gcc
+CFLAGS				?=	-Wall -Wextra -Werror
+AR 					?=	ar
+RM					?=	rm -f
+MKDIR				?=	mkdir -p
+ECHO				?=	echo
+
+# ********************************* F O N T S *********************************
+
+EOC					:=	"\033[0m"
+LIGHT				:=	"\033[1m"
+DARK				:=	"\033[2m"
+
+ITALIC				:=	"\033[3m"
+UNDERLINE			:=	"\033[4m"
+
+BLACK				:=	"\033[30m"
+RED					:=	"\033[31m"
+GREEN				:=	"\033[32m"
+BLUE				:=	"\033[34m"
+PURPLE				:=	"\033[35m"
+CYAN				:=	"\033[36m"
+WHITE				:=	"\033[37m"
 
 # ********************************* P A T H S *********************************
 
-SRCS_PATH			:= src
-OBJS_PATH			:= bin
-HDRS_PATH			:= include
+SRCS_PATH			:=	src
+OBJS_PATH			:=	bin
+HDRS_PATH			:=	include
 
 # ********************************* N A M E S *********************************
 
-SRCS_NAME			:= 	ft_atoi.c\
+SRCS_NAME			:=	ft_atoi.c\
 						ft_bzero.c\
 						ft_calloc.c\
 						ft_get_next_line.c\
@@ -82,8 +100,8 @@ SRCS_NAME			:= 	ft_atoi.c\
 						ft_str/ft_substr.c\
 						ft_tolower.c\
 						ft_toupper.c
-SRCS				:= $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
-OBJS 				:= $(addprefix $(OBJS_PATH)/, $(SRCS_NAME:.c=.o))
+SRCS				:=	$(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
+OBJS 				:=	$(addprefix $(OBJS_PATH)/, $(SRCS_NAME:.c=.o))
 
 # ********************************* R U L E S *********************************
 
@@ -91,16 +109,23 @@ all:				$(NAME)
 					
 $(OBJS_PATH)/%.o: 	$(SRCS_PATH)/%.c $(HDRS_PATH)
 					@$(MKDIR) $(dir $@)
+					@$(ECHO)\
+					$(BLACK)$(DARK)$(ITALIC)"Compiling $<"$(EOC)
 					@$(CC) -o $@ -c $< -I $(HDRS_PATH) $(CFLAGS)
 
 $(NAME):			$(OBJS)
 					@$(AR) rcs $@ $^ 
-					@echo "libft: complete."
+					@$(ECHO)\
+					$(CYAN)$(UNDERLINE)"$@"$(EOC)": "$(GREEN)"complete"$(EOC)
 
 clean:		
+					@$(ECHO)\
+					$(RED)$(ITALIC)"Deleting binary files"$(EOC)
 					@$(RM) $(OBJS)
 
 fclean:				clean	
+					@$(ECHO)\
+					$(RED)$(ITALIC)"Deleting static library file"$(EOC)
 					@$(RM) -r $(OBJS_PATH)
 					@$(RM) $(NAME)
 
