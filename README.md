@@ -52,7 +52,19 @@
 - [ft_memmove](/src/ft_mem/ft_memmove.c)
 - [ft_memset](/src/ft_mem/ft_memset.c)
 
-### 4. Print functions
+### 4. *printf* functions
+
+- [ft_printf_arg](/src/ft_printf/ft_printf_arg.c)
+- [ft_printf_putaddress_fd](/src/ft_printf/ft_printf_putadress_fd.c)
+- [ft_printf_putchar_fd](/src/ft_printf/ft_printf_putchar_fd.c)
+- [ft_printf_putendl_fd](/src/ft_printf/ft_printf_putendl_fd.c)
+- [ft_printf_putnbr_base_fd](/src/ft_printf/ft_printf_putnbr_base_fd.c)
+- [ft_printf_putnbr_fd](/src/ft_printf/ft_printf_putnbr_fd.c)
+- [ft_printf_putnbr_uns_fd](/src/ft_printf/ft_printf_putnbr_uns_fd.c)
+- [ft_printf_putstr_fd](/src/ft_printf/ft_printf_putstr_fd.c)
+- [ft_printf](/src/ft_printf/ft_printf.c)
+
+### 5. Print functions
 
 - [ft_putaddress_fd](/src/ft_put/ft_putadress_fd.c)
 - [ft_putchar_fd](/src/ft_put/ft_putchar_fd.c)
@@ -62,7 +74,7 @@
 - [ft_putnbr_uns_fd](/src/ft_put/ft_putnbr_uns_fd.c)
 - [ft_putstr_fd](/src/ft_put/ft_putstr_fd.c)
 
-### 5. String functions
+### 6. String functions
 
 - [ft_strchr](/src/ft_str/ft_strchr.c)
 - [ft_strdup](/src/ft_str/ft_strdup.c)
