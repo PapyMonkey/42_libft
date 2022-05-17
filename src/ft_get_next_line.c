@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 22:19:04 by aguiri            #+#    #+#             */
-/*   Updated: 2022/02/12 23:26:48 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/17 23:36:52 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,30 @@
 # define BUFFER_SIZE 42
 #endif
 
-char	*ft_read_fd_extend(char *buff_static, char *buff, int r)
+char	*gnl_read_fd_extend(char *buff_keep, char *buff, int r)
 {
 	char	*tmp;
 
 	if (r == -1)
 	{
 		free(buff);
-		free(buff_static);
+		free(buff_keep);
 		return (NULL);
 	}
 	buff[r] = '\0';
-	tmp = ft_strjoin(buff_static, buff);
+	tmp = ft_strjoin(buff_keep, buff);
 	if (!tmp)
 	{
 		free(tmp);
-		free(buff_static);
+		free(buff_keep);
 		free(buff);
 		return (NULL);
 	}
-	free(buff_static);
+	free(buff_keep);
 	return (tmp);
 }
 
-char	*ft_read_fd(const int fd, char *buff_static)
+char	*gnl_read_fd(const int fd, char *buff_keep)
 {
 	char	*buff;
 	int		r;
@@ -48,22 +48,22 @@ char	*ft_read_fd(const int fd, char *buff_static)
 	if (!buff)
 	{
 		free(buff);
-		free(buff_static);
+		free(buff_keep);
 		return (NULL);
 	}
 	r = 1;
-	while (r != 0 && !ft_strchr(buff_static, '\n'))
+	while (r != 0 && !ft_strchr(buff_keep, '\n'))
 	{
 		r = read(fd, buff, BUFFER_SIZE);
-		buff_static = ft_read_fd_extend(buff_static, buff, r);
-		if (!buff_static)
+		buff_keep = gnl_read_fd_extend(buff_keep, buff, r);
+		if (!buff_keep)
 			return (NULL);
 	}
 	free(buff);
-	return (buff_static);
+	return (buff_keep);
 }
 
-char	*ft_get_current_line(char *buff_static)
+char	*gnl_get_current_line(char *buff_keep)
 {
 	int		i;
 	int		len;
@@ -71,9 +71,9 @@ char	*ft_get_current_line(char *buff_static)
 
 	i = 0;
 	len = 0;
-	while (buff_static[len] != '\0')
+	while (buff_keep[len] != '\0')
 	{
-		if (buff_static[len] == '\n')
+		if (buff_keep[len] == '\n')
 		{
 			len++;
 			break ;
@@ -86,53 +86,53 @@ char	*ft_get_current_line(char *buff_static)
 	line[len] = '\0';
 	while (i < len)
 	{
-		line[i] = buff_static[i];
+		line[i] = buff_keep[i];
 		i++;
 	}
 	return (line);
 }
 
-char	*ft_gnl_backup(char *buff_static)
+char	*gnl_backup(char *buff_keep)
 {
 	int		i;
 	char	*tmp;
 
 	i = 0;
-	while (buff_static[i])
+	while (buff_keep[i])
 	{
-		if (buff_static[i] == '\n')
+		if (buff_keep[i] == '\n')
 		{
 			i++;
 			break ;
 		}
 		i++;
 	}
-	tmp = ft_strdup(buff_static + i);
+	tmp = ft_strdup(buff_keep + i);
 	if (!tmp)
 		return (NULL);
-	free(buff_static);
+	free(buff_keep);
 	return (tmp);
 }
 
-char	*ft_get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	static char	*backup;
+	static char	*backup[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (backup == NULL)
-		backup = ft_strdup("");
-	backup = ft_read_fd(fd, backup);
-	if (backup == NULL)
+	if (backup[fd] == NULL)
+		backup[fd] = ft_strdup("");
+	backup[fd] = gnl_read_fd(fd, backup[fd]);
+	if (backup[fd] == NULL)
 		return (NULL);
-	line = ft_get_current_line(backup);
-	backup = ft_gnl_backup(backup);
-	if (backup == NULL)
+	line = gnl_get_current_line(backup[fd]);
+	backup[fd] = gnl_backup(backup[fd]);
+	if (backup[fd] == NULL)
 		return (NULL);
 	if (line[0] == '\0')
 	{
-		free(backup);
+		free(backup[fd]);
 		free(line);
 		return (NULL);
 	}
