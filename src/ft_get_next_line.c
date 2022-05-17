@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 22:19:04 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 23:36:52 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/17 23:52:14 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ char	*gnl_backup(char *buff_keep)
 	return (tmp);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	static char	*backup[1024];
 	char		*line;
