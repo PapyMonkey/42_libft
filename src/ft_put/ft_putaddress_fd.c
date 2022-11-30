@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 01:49:28 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/04 02:07:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:15:49 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_strlen_and_test_longlong(char *str)
 	return (len);
 }
 
-static void	ft_putlonglong_base_fd(unsigned long long nbr, char *base, int fd)
+static void	ft_putlonglong_base_fd(long long int nbr, char *base, int fd)
 {
 	unsigned int		len;
 	unsigned long long	div;
