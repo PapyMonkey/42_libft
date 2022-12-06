@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 05:02:45 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 23:42:24 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/12/06 04:43:27 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,14 @@ int		ft_isdigit(int c);
  * \return  	1 if True, 0 if False.
  */
 int		ft_isprint(int c);
+
+/**
+ * \brief   	Tests for any 'space' character.
+ * 
+ * \param c 	Character to be tested. 
+ * \return  	1 if True, 0 if False.
+ */
+int		ft_isspace(int c);
 
 /**
  * \brief		Allocate (with malloc()) and returns a string of characters
