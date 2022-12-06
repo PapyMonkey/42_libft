@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:25:13 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/02 20:27:13 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/12/06 05:44:49 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * \return			Pointer to the new element. 
  */
 t_list	*ft_lstnew(void *content);
+
+/**
+ * \brief		Iterates over the list lst to find elem_to_rm and remove it.
+ *				The function del is there to destroy the content of an element.
+ * 
+ * \param lst				First element of the list. 
+ * \param elem_to_rm		Adresss of the function to be applied.
+ * \param del				Function's address used to delete the element's 
+ *							content.
+ */
+void	ft_lstremove(t_list **lst, t_list *elem_to_rm, void (*del)(void*));
 
 /**
  * \brief		Count the number of elemets of the list.
