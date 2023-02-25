@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:54:37 by aguiri            #+#    #+#             */
-/*   Updated: 2021/11/02 12:30:08 by aguiri           ###   ########.fr       */
+/*   Updated: 2023/02/25 17:51:18 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,10 +127,3 @@ char	**ft_split(char const *s, char c)
 	ft_write_tab(str_splitted, s, c);
 	return (str_splitted);
 }
-/*
-int	main(void)
-{
-  char **tab = ft_split("chinimala", ' ');
-  return 0;
-}
-*/
