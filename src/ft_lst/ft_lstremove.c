@@ -14,27 +14,25 @@
 
 void	ft_lstremove(t_list **lst, t_list *elem_to_rm, void (*del)(void*))
 {
-	t_list	*tmp;
-	t_list	*tmp_next;
-	t_list	*tmp_before;
+	t_list	*prev;
+	t_list	*current;
 
-	if (!lst || !elem_to_rm)
+	prev = NULL;
+	if (!lst || !*lst || !elem_to_rm)
 		return ;
-	tmp = *lst;
-	tmp_before = NULL;
-	tmp_next = tmp->next;
-	while (tmp && tmp != elem_to_rm)
+	current = *lst;
+	while (current)
 	{
-		tmp_before = tmp;
-		tmp = tmp_next;
-		if (tmp)
-			tmp_next = tmp->next;
+		if (current == elem_to_rm)
+		{
+			if (!prev)
+				*lst = current->next;
+			else
+				prev->next = current->next;
+			ft_lstdelone(current, del);
+			return ;
+		}
+		prev = current;
+		current = current->next;
 	}
-	if (!tmp)
-		return ;
-	if (!tmp_before)
-		*lst = tmp_next;
-	else
-		tmp_before->next = tmp_next;
-	ft_lstdelone(tmp, del);
 }
